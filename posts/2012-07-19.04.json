@@ -1,0 +1,12 @@
+{
+  "wpId": 77,
+  "slug": "mediawiki-nginx-staticify",
+  "title": "mediawiki nginx 静态化",
+  "createTime": "2012-07-19T12:24:09.000Z",
+  "updateTime": "2012-07-26T10:14:52.000Z",
+  "type": "html",
+  "file": "2012-07-19.04.html",
+  "tags": [
+    "nginx"
+  ]
+}

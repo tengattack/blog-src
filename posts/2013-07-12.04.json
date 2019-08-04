@@ -1,0 +1,12 @@
+{
+  "wpId": 731,
+  "slug": "remove-macosx-ds_store-permanently",
+  "title": "让MacOSX目录下不产生.DS_Store文件",
+  "createTime": "2013-07-11T22:53:38.000Z",
+  "updateTime": "2013-07-11T23:24:27.000Z",
+  "type": "html",
+  "file": "2013-07-12.04.html",
+  "tags": [
+    "MacOSX"
+  ]
+}

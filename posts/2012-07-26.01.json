@@ -1,0 +1,12 @@
+{
+  "wpId": 107,
+  "slug": "bbpress-nginx-staticify",
+  "title": "bbPress nginx 静态化",
+  "createTime": "2012-07-26T09:15:20.000Z",
+  "updateTime": "2012-07-26T09:15:20.000Z",
+  "type": "html",
+  "file": "2012-07-26.01.html",
+  "tags": [
+    "nginx"
+  ]
+}

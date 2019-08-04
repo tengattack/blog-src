@@ -1,0 +1,46 @@
+今天想为gif图片提供支持，找到了现成的gif库giflib:
+<a href="http://sourceforge.net/projects/giflib/">http://sourceforge.net/projects/giflib/</a>
+
+由于是在Windows下开发，使用了VS2012，由于VS不支持C99标准(没有 stdbool.h 文件)，giflib的c文件中使用bool会提示未知类型，不过这些都是小问题，很容易就可以通过修改部分代码改掉，从而成功编译，这里就不细谈了。
+
+由于是VS，一般我们都会在Debug中调试程序，不过很不幸，在读取一张gif图片的时候居然发生了内存错误:
+<a href="http://tengattack.com/wp-content/uploads/2013/01/neko.gif"><img class="alignnone size-full wp-image-491" title="neko" src="http://tengattack.com/wp-content/uploads/2013/01/neko.gif" alt="" width="500" height="250" /></a>
+<strong>一张很萌的gif的说~</strong>
+<!--more-->
+
+通过仔细调试，发现错误是由于GifFreeMapObject函数对ColorMapObject类型中的(GifColorType)Colors的free造成的。
+很奇怪，为什么free会出错？难道是写入数据越界了吗？
+又仔细翻了一下代码，发现并没有这种情况，giflib开发者想必也不会让这种情况发生吧，哪到底是什么问题呢？
+
+我们找到GifMakeMapObject函数，发现他对Colors的分配是使用了calloc这个函数:
+[code lang="cpp"]
+Object-&gt;Colors = (GifColorType *)calloc(ColorCount, sizeof(GifColorType));
+[/code]
+
+这时就隐约感觉发现问题所在了，立刻改成:
+[code lang="cpp"]
+Object-&gt;Colors = (GifColorType *)malloc(ColorCount * sizeof(GifColorType));
+if (ColorMap == NULL) memset((char *)Object-&gt;Colors, 0, ColorCount * sizeof(GifColorType));
+[/code]
+<strong>由于calloc会初始化分配好的内存，所以我们也应该用memset初始化一下。</strong>
+
+而这里对ColorMap进行判断是，是因为后面有这样一段代码:
+[code lang="cpp"]
+    if (ColorMap != NULL) {
+        memcpy((char *)Object-&gt;Colors,
+               (char *)ColorMap, ColorCount * sizeof(GifColorType));
+    }
+[/code]
+
+本着不重复写内存的原则，本人加了一个判断，看是否需要初始化这块分配好的内存。
+
+<span style="color: #ccffcc;"><strong><del datetime="2013-04-05T08:34:39+00:00">众所周知，calloc是使用栈空间的，而很可怕的是由于各种原因本人程序在DEBUG下栈空间很紧张，这一用calloc分配就导致了各种奇葩的问题，改成用malloc之后程序果断没有问题了。</del></strong></span>
+不好意思，前面写错了，calloc并不是分配的是栈空间，感谢AngryCat告知
+<a href="http://msdn.microsoft.com/en-us/library/aa272048(v=vs.60).aspx">http://msdn.microsoft.com/en-us/library/aa272048(v=vs.60).aspx</a>
+我猜想的原因还是由于是在Debug模式下的一些函数的原因，在Debug模式下调用calloc会调用_calloc_dbg函数：
+<a href="http://msdn.microsoft.com/en-us/library/9tkcfd07(v=vs.80).aspx">http://msdn.microsoft.com/en-us/library/9tkcfd07(v=vs.80).aspx</a>
+然后可能就发生了点奇葩的现象……
+
+不过使用calloc真是蛋疼啊！
+
+PS. 如果不是DEBUG模式，本人的程序在这里使用calloc就没有问题

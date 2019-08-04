@@ -1,0 +1,41 @@
+最近在研究ONScripter，自然是下载下源代码来研究。
+
+由于ONS依赖SDL的库，包括SDL、SDL_image、SDL_ttf等许多开源库，我自然是全部下载下来研究了。
+全部编译好link之后发现程序可以ONS执行但是却显示不了对话的文本，
+调试了一早上和中午发现，显示不了文本的问题不是出现在ONS的代码里，而是在SDL_ttf库里。
+<!--more-->
+在SDL_ttf.c的TTF_RenderGlyph_Shaded函数中，有一段这样的代码: 
+
+[code lang="cpp"]
+	/* Copy the character from the pixmap */
+	src = glyph-&gt;pixmap.buffer;
+	dst = (Uint8*) textbuf-&gt;pixels;
+
+	for ( row = 0; row &lt; glyph-&gt;bitmap.rows; ++row ) {
+		memcpy( dst, src, glyph-&gt;pixmap.width );
+		src += glyph-&gt;pixmap.pitch;
+		dst += textbuf-&gt;pitch;
+	}
+[/code]
+
+而这明显是有问题的，不管是从注释还是for里面的代码来看，glyph->bitmap.rows 应该为 glyph->pixmap.rows
+而如果是 glyph->bitmap.rows 的话，在这里 glyph->bitmap.rows 为0，也就是说什么character数据也拷贝不到，也就自然无法显示文字。
+
+我们把 glyph->bitmap.rows 修改为 glyph->pixmap.rows:
+
+[code lang="cpp"]
+	/* Copy the character from the pixmap */
+	src = glyph-&gt;pixmap.buffer;
+	dst = (Uint8*) textbuf-&gt;pixels;
+	//glyph-&gt;bitmap.rows -&gt; glyph-&gt;pixmap.rows by TengAttack
+	for ( row = 0; row &lt; glyph-&gt;pixmap.rows; ++row ) {
+		memcpy( dst, src, glyph-&gt;pixmap.width );
+		src += glyph-&gt;pixmap.pitch;
+		dst += textbuf-&gt;pitch;
+	}
+[/code]
+
+重新编译SDL_ttf库，再重新链接ONS即可。
+
+<a href="http://tengattack.com/wp-content/uploads/2012/10/onscripter-sdl_ttf.png"><img src="http://tengattack.com/wp-content/uploads/2012/10/onscripter-sdl_ttf.png" alt="" title="onscripter-sdl_ttf" width="1127" height="539" class="alignnone size-full wp-image-255" /></a>
+

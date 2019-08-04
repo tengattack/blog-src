@@ -1,0 +1,21 @@
+最近为了方便使用GPIO折腾，入手了一个树莓派:
+<a href="http://tengattack.com/wp-content/uploads/2013/10/IMG_3148.jpg"><img src="http://tengattack.com/wp-content/uploads/2013/10/IMG_3148.jpg" alt="IMG_3148" width="1024" height="768" class="alignnone size-full wp-image-831" /></a>
+<!--more-->
+
+由于一些众所周知的原因，打算装个gevent
+但是发现直接使用apt-get安装的无法使用，会提示Segmentation fault
+
+于是就在网上搜索，发现此处记录了可以使用pip的方式安装:
+<a href="http://www.lpfrx.com/archives/4548/" target="_blank">http://www.lpfrx.com/archives/4548/</a>
+
+但是没有给出具体的步骤，既然装了，我就顺便把步骤贴出来当记录一下好了。
+
+[code lang="shell"]
+$ sudo apt-get install python-dev
+$ sudo easy_install -U distribute
+$ sudo apt-get install python-pip
+$ sudo apt-get install libevent-dev
+$ sudo pip install gevent
+[/code]
+
+然后就可以使用了~

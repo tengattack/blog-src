@@ -1,0 +1,118 @@
+[
+  {
+    "name": "galgame",
+    "slug": "galgame"
+  },
+  {
+    "name": "nginx",
+    "slug": "nginx"
+  },
+  {
+    "name": "php",
+    "slug": "php"
+  },
+  {
+    "name": "psp",
+    "slug": "psp"
+  },
+  {
+    "name": "生活",
+    "slug": "life"
+  },
+  {
+    "name": "web",
+    "slug": "web"
+  },
+  {
+    "name": "梦",
+    "slug": "dream"
+  },
+  {
+    "name": "nodejs",
+    "slug": "nodejs"
+  },
+  {
+    "name": "c++",
+    "slug": "c"
+  },
+  {
+    "name": "日本",
+    "slug": "japan"
+  },
+  {
+    "name": "Windows",
+    "slug": "windows"
+  },
+  {
+    "name": "嵌入式",
+    "slug": "embed"
+  },
+  {
+    "name": "FreeBSD",
+    "slug": "freebsd"
+  },
+  {
+    "name": "SSD",
+    "slug": "ssd"
+  },
+  {
+    "name": "blog",
+    "slug": "blog"
+  },
+  {
+    "name": "device",
+    "slug": "device"
+  },
+  {
+    "name": "Google",
+    "slug": "google"
+  },
+  {
+    "name": "汉化",
+    "slug": "localization"
+  },
+  {
+    "name": "学校",
+    "slug": "school"
+  },
+  {
+    "name": "develop",
+    "slug": "develop"
+  },
+  {
+    "name": "MySQL",
+    "slug": "mysql"
+  },
+  {
+    "name": "OS",
+    "slug": "os"
+  },
+  {
+    "name": "MacOSX",
+    "slug": "macosx"
+  },
+  {
+    "name": "生活",
+    "slug": "life"
+  },
+  {
+    "name": "python",
+    "slug": "python"
+  },
+  {
+    "name": "nixie",
+    "slug": "nixie"
+  },
+  {
+    "name": "RaspberryPi",
+    "slug": "raspberrypi"
+  },
+  {
+    "name": "PCB",
+    "slug": "pcb"
+  },
+  {
+    "name": "小猫咪",
+    "slug": "cat"
+  }
+]

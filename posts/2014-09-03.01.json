@@ -1,0 +1,15 @@
+{
+  "wpId": 1067,
+  "slug": "modify-dnsapi.dll-to-enforce-tcp-dns",
+  "title": "修改Windows下dnsapi.dll强制使用TCP进行DNS查询",
+  "createTime": "2014-09-03T11:31:17Z",
+  "updateTime": "2014-09-03T18:22:19Z",
+  "type": "html",
+  "tags": [
+    "c++",
+    "develop",
+    "asm",
+    "dns"
+  ],
+  "file": "2014-09-03.01.html"
+}

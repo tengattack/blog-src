@@ -1,0 +1,18 @@
+不知为何官方FTP上找不到9.0-RELEASE的目录，Ports更新不了，sysinstall也装不了FreeBSD 9的源码，于是在安装lsof时出现如下错误:
+
+[code]
+Creating ./lockf_owner.h from /usr/src/sys/kern/kern_lockf.c
+FATAL ERROR: can't read /usr/src/sys/kern/kern_lockf.c
+FATAL ERROR: ./lockf_owner.h creation failed (see 00FAQ)&quot;
+[/code]
+
+我们可以使用如下方式来获取sys目录下的代码 (前提自然是已经装了svn):
+[code]
+svn checkout http://svn0.us-west.FreeBSD.org/base/stable/9/sys /usr/src/sys
+[/code]
+
+然后就直接make就好了~
+[code]
+cd /usr/ports/sysutils/lsof
+make install clean
+[/code]

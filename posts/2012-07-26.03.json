@@ -1,0 +1,13 @@
+{
+  "wpId": 118,
+  "slug": "setup-nodejs-on-freebsd",
+  "title": "nodejs+nginx在FreeBSD上的配置",
+  "createTime": "2012-07-26T11:20:28.000Z",
+  "updateTime": "2012-07-28T19:10:05.000Z",
+  "type": "html",
+  "file": "2012-07-26.03.html",
+  "tags": [
+    "nginx",
+    "nodejs"
+  ]
+}

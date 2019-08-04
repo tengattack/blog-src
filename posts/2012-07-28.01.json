@@ -1,0 +1,12 @@
+{
+  "wpId": 133,
+  "slug": "no-gzip-by-default-sinacloud-apache",
+  "title": "新浪云商店的Apache居然没有默认开启gzip",
+  "createTime": "2012-07-28T14:52:10.000Z",
+  "updateTime": "2012-07-28T14:52:10.000Z",
+  "type": "html",
+  "file": "2012-07-28.01.html",
+  "tags": [
+    "生活"
+  ]
+}

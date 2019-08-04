@@ -1,0 +1,74 @@
+[
+  {
+    "url": "http://blog.phoenixlzx.com/",
+    "name": "Phoenix's island",
+    "description": "",
+    "rel": "friend"
+  },
+  {
+    "url": "http://blog.cee.moe/",
+    "name": "Cee's blog Perfect Freeze!",
+    "description": "Perfect Freeze!",
+    "rel": "friend"
+  },
+  {
+    "url": "https://plumz.me/",
+    "name": "plum's blog",
+    "description": "",
+    "rel": "friend"
+  },
+  {
+    "url": "http://blog.xwenzi.com/",
+    "name": "孑孓的水洼",
+    "description": "",
+    "rel": "friend"
+  },
+  {
+    "url": "https://takedakinji.phpfogapp.com/",
+    "name": "Insignificantia.",
+    "description": "竹田伊織的blog",
+    "rel": "friend"
+  },
+  {
+    "url": "http://vanthic.me/",
+    "name": "寒凪の城",
+    "description": "Vanthic Noel's blog",
+    "rel": "friend"
+  },
+  {
+    "url": "http://yushiyao.me/",
+    "name": "Shiyao's blog",
+    "description": "Shiyao的博客",
+    "rel": "friend"
+  },
+  {
+    "url": "http://sukey.tk/",
+    "name": "初夏",
+    "description": "苏绮的博客",
+    "rel": "friend"
+  },
+  {
+    "url": "http://legendt.me/",
+    "name": "伝説の所",
+    "description": "Legend Tang's blog",
+    "rel": "friend"
+  },
+  {
+    "url": "http://www.2333333.tk/",
+    "name": "MODULE 1e9+7",
+    "description": "Fotile Huang's blog",
+    "rel": ""
+  },
+  {
+    "url": "http://lightnovel.me/",
+    "name": "轻研社",
+    "description": "acg 轻小说吐槽日志",
+    "rel": "friend"
+  },
+  {
+    "url": "http://im.dimpurr.com/",
+    "name": "钉子の次元",
+    "description": "",
+    "rel": "friend"
+  }
+]

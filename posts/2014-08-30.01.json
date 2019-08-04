@@ -1,0 +1,16 @@
+{
+  "wpId": 1027,
+  "slug": "cross-compile-shadowsocks-libev-for-r6300v2",
+  "title": "为R6300v2新固件交叉编译shadowsocks-libev",
+  "createTime": "2014-08-30T08:33:21Z",
+  "updateTime": "2015-09-28T06:33:35Z",
+  "type": "html",
+  "tags": [
+    "c++",
+    "develop",
+    "R6300v2",
+    "dd-wrt",
+    "shadowsocks"
+  ],
+  "file": "2014-08-30.01.html"
+}
